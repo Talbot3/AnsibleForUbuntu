@@ -1,0 +1,15 @@
+---
+- name: install etcd
+  # become: yes
+  hosts: pi
+  # collections :
+  #   - m4eba.etcd
+  tasks:
+  # - name: install etcd by collections
+  #   import_role:
+  #     name: m4eba.etcd
+  # - include_role : 
+  #     name: etcd
+  - name: change host name
+    hostname: 
+      name: "pi{{ ansible_default_ipv4.address.split('.')[-1] }}"

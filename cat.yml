@@ -1,0 +1,11 @@
+---
+- name:
+  hosts: all
+  become: true
+
+  tasks:
+    - name: test command
+      command: cat /etc/hostname
+      register: hosts_value
+    - debug:
+        msg: "{{hosts_value.stdout}}"
