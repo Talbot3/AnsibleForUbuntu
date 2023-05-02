@@ -4,8 +4,10 @@
   become: true
 
   tasks:
-    - name: test command
-      command: cat /etc/hostname
-      register: hosts_value
+    # - name: test command
+    #   command: cat /etc/hostname
+    #   register: hosts_value
+    # - debug:
+    #     msg: "{{hosts_value.stdout}}"
     - debug:
-        msg: "{{hosts_value.stdout}}"
+        msg: "{{ansible_env}}"

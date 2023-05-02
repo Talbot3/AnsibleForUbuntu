@@ -1,19 +1,22 @@
 ---
 - name: install 
   become: yes
-  hosts: pi
+  hosts: ub
   # collections :
   #   - m4eba.etcd
   tasks:
+  - name: install v2ray by apt
+    apt: 
+      name: "v2ray"
   - name: config v2ray file 
     copy:
       src: files/config.json
       dest: /etc/v2ray/config.json
-  # - name: run v2ray
-  #   command: service v2ray status
-  #   register: status_value
-  # - debug:
-  #     msg: "{{status_value.stdout}}"
+  - name: run v2ray
+    command: service v2ray status
+    register: status_value
+  - debug:
+      msg: "{{status_value.stdout}}"
   # - name: install g by command
   #   command: curl -sSL https://raw.githubusercontent.com/voidint/g/master/install.sh | bash
   # - name: install etcd by collections
@@ -24,6 +27,4 @@
   # - name: change host name
   #   hostname: 
   #     name: "pi{{ ansible_default_ipv4.address.split('.')[-1] }}"
-  # - name: install v2ray by apt
-  #   apt: 
-  #     name: "v2ray"
+
