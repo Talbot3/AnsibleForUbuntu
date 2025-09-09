@@ -1,4 +1,30 @@
-# AnsibleForUbuntu（Ansible IaC）
+# 
 
-> 基础设施即代码（IaC）是通过代码来管理和置备基础设施的方法。
-> 2023-04-29 用于Ubuntu集群部署必要的基础套件。
+项目编号: 7546405516814270758
+
+本项目是由 [网站开发专家](https://space.coze.cn/) 创建.
+
+[**项目地址**](https://space.coze.cn/task/7546405516814270758)
+
+## 本地开发
+
+### 环境准备
+
+- 安装 [Node.js](https://nodejs.org/en)
+- 安装 [pnpm](https://pnpm.io/installation)
+
+### 操作步骤
+
+- 安装依赖
+
+```sh
+pnpm install
+```
+
+- 启动 Dev Server
+
+```sh
+pnpm run dev
+```
+
+- 在浏览器访问 http://localhost:3000
